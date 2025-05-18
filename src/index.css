@@ -1,0 +1,66 @@
+@import "tailwindcss";
+
+:root {
+  --bg-clr: #fbfcff;
+  --main-clr-1: #371466;
+  --main-clr-2: #d8c00a;
+  --header-height: 90px;
+}
+
+@theme {
+  --color-main-clr-1: var(--main-clr-1);
+  --color-main-clr-2: var(--main-clr-2);
+}
+
+@layer {
+  /* custom container */
+  .myContainer {
+    @apply container px-4 mx-auto;
+  }
+
+  /* custom padding */
+  .SectionPadding {
+    @apply py-10 lg:py-16;
+  }
+
+  /* custom btn */
+  .myBtn {
+    @apply flex items-center gap-2 p-3 rounded-full text-lg lg:text-xl font-medium bg-main-clr-1/20 text-black duration-200 cursor-pointer;
+
+    span {
+      @apply bg-main-clr-1 text-white flex items-center justify-center w-8 h-8 p-1 rounded-full duration-200;
+    }
+
+    &:hover {
+      @apply bg-main-clr-1 text-white;
+
+      span {
+        @apply bg-main-clr-2 translate-x-1;
+      }
+    }
+  }
+
+  /* navLink */
+  .navLink {
+    @apply relative after:hidden xl:after:block;
+
+    &::after {
+      @apply content-[''] absolute w-3 h-3 bg-transparent duration-200 rounded-t-full rounded-e-none left-1/2 -translate-x-1/2 bottom-[-3px] translate-y-0;
+    }
+
+    &:hover,
+    &.active {
+      p {
+        @apply xl:-translate-y-3;
+      }
+
+      &::after {
+        @apply bg-main-clr-2;
+      }
+    }
+  }
+}
+
+body {
+  font-family: "Tajawal", sans-serif;
+}

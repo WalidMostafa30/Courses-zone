@@ -1,0 +1,28 @@
+.banner {
+  position: relative;
+
+  &::after,
+  &::before {
+    content: "";
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    border-radius: 50%;
+    z-index: -1;
+    /* backdrop-filter: blur(100px); */
+  }
+
+  &::after {
+    top: -5px;
+    left: -5px;
+    background-color: var(--main-clr-2);
+    box-shadow:  1px 1px 100px 60px var(--main-clr-2);
+  }
+  
+  &::before {
+    bottom: -5px;
+    right: -5px;
+    background-color: var(--main-clr-1);
+    box-shadow:  1px 1px 100px 60px var(--main-clr-1);
+  }
+}
