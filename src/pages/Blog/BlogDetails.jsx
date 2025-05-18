@@ -17,7 +17,12 @@ const BlogDetails = () => {
 
       <div className="myContainer SectionPadding space-y-4">
         <div className="w-full h-56 lg:h-96 rounded-lg overflow-hidden">
-          <img src={img} alt="" className="w-full h-full object-cover" />
+          <img
+            loading="lazy"
+            src={img}
+            alt=""
+            className="w-full h-full object-cover"
+          />
         </div>
 
         <h3 className="text-xl lg:text-3xl font-bold text-center">

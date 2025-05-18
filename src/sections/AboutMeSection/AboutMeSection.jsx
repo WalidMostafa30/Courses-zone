@@ -41,7 +41,7 @@ const AboutMeSection = () => {
         </div>
 
         <div className="hidden xl:flex h-full items-end w-1/2">
-          <img src={personImg} alt="person" className="w-full" />
+          <img loading="lazy" src={personImg} alt="person" className="w-full" />
         </div>
       </div>
     </article>

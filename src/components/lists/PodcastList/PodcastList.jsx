@@ -11,6 +11,7 @@ const PodcastList = ({ dataList }) => {
         >
           <div className="w-full lg:w-60 h-60 rounded-2xl overflow-hidden relative">
             <img
+              loading="lazy"
               src={data.image}
               className="w-full h-full object-cover"
               alt=""
@@ -25,9 +26,7 @@ const PodcastList = ({ dataList }) => {
               {data.user}
             </p>
 
-            <h3 className="text-3xl font-bold">
-              {data.title}
-            </h3>
+            <h3 className="text-3xl font-bold">{data.title}</h3>
 
             <AudioPlayer />
           </div>

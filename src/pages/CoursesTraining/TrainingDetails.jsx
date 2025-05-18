@@ -24,7 +24,12 @@ const TrainingDetails = () => {
       <div className="myContainer SectionPadding">
         <div className="flex flex-col lg:flex-row lg:items-center gap-6 shadow-lg rounded-lg p-4">
           <div className="w-full h-52 lg:w-1/2 lg:h-96 rounded-lg overflow-hidden">
-            <img src={img} alt="" className="w-full h-full object-cover" />
+            <img
+              loading="lazy"
+              src={img}
+              alt=""
+              className="w-full h-full object-cover"
+            />
           </div>
 
           <div className="flex-1 flex flex-col gap-6">

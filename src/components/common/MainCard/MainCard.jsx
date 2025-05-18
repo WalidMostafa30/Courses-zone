@@ -59,7 +59,12 @@ const MainCard = ({
   return (
     <div className="flex flex-col gap-4 rounded-2xl bg-white p-4 shadow-lg duration-200 hover:shadow-xl">
       <div className="relative h-40 w-full overflow-hidden rounded-2xl">
-        <img src={image} alt={title} className="h-full w-full object-cover" />
+        <img
+          loading="lazy"
+          src={image}
+          alt={title}
+          className="h-full w-full object-cover"
+        />
         {ratingBadge}
       </div>
 

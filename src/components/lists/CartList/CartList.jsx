@@ -16,6 +16,7 @@ const CartList = () => {
           >
             <span className="w-full h-44 md:w-32 xl:h-32 rounded-md overflow-hidden">
               <img
+                loading="lazy"
                 src={item.image}
                 alt="course"
                 className="w-full h-full object-cover"

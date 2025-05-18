@@ -1,50 +1,67 @@
 import { RouterProvider, createBrowserRouter } from "react-router-dom";
+import { lazy, Suspense } from "react";
 import App from "../App";
-import Home from "../pages/Home/Home";
-import AboutTrainer from "../pages/AboutTrainer/AboutTrainer";
-import CoursesTraining from "../pages/CoursesTraining/CoursesTraining";
-import CoursesWorkshops from "../pages/CoursesWorkshops/CoursesWorkshops";
-import Blog from "../pages/Blog/Blog";
-import Consulting from "../pages/Consulting/Consulting";
-import Podcast from "../pages/Podcast/Podcast";
-import ContactUs from "../pages/ContactUs/ContactUs";
-import Cart from "../pages/Cart/Cart";
-import WorkshopDetails from "../pages/CoursesWorkshops/WorkshopDetails";
-import TrainingDetails from "../pages/CoursesTraining/TrainingDetails";
-import BlogDetails from "../pages/Blog/BlogDetails";
-import Profile from "../pages/Profile/Profile";
-import MyCourses from "../pages/MyCourses/MyCourses";
+import Loading from "../components/layout/Loading/Loading";
 
+// Lazy loaded pages
+const Home = lazy(() => import("../pages/Home/Home"));
+const AboutTrainer = lazy(() => import("../pages/AboutTrainer/AboutTrainer"));
+const CoursesTraining = lazy(() =>
+  import("../pages/CoursesTraining/CoursesTraining")
+);
+const TrainingDetails = lazy(() =>
+  import("../pages/CoursesTraining/TrainingDetails")
+);
+const CoursesWorkshops = lazy(() =>
+  import("../pages/CoursesWorkshops/CoursesWorkshops")
+);
+const WorkshopDetails = lazy(() =>
+  import("../pages/CoursesWorkshops/WorkshopDetails")
+);
+const Blog = lazy(() => import("../pages/Blog/Blog"));
+const BlogDetails = lazy(() => import("../pages/Blog/BlogDetails"));
+const Consulting = lazy(() => import("../pages/Consulting/Consulting"));
+const Podcast = lazy(() => import("../pages/Podcast/Podcast"));
+const ContactUs = lazy(() => import("../pages/ContactUs/ContactUs"));
+const Cart = lazy(() => import("../pages/Cart/Cart"));
+const Profile = lazy(() => import("../pages/Profile/Profile"));
+const MyCourses = lazy(() => import("../pages/MyCourses/MyCourses"));
+
+const withSuspense = (component) => (
+  <Suspense fallback={<Loading />}>{component}</Suspense>
+);
+
+// Routes
 const router = createBrowserRouter([
   {
     path: "/",
     element: <App />,
     children: [
-      { index: true, element: <Home /> },
-      { path: "/about-trainer", element: <AboutTrainer /> },
+      { index: true, element: withSuspense(<Home />) },
+      { path: "/about-trainer", element: withSuspense(<AboutTrainer />) },
       {
         path: "/courses",
         children: [
+          { path: "training", element: withSuspense(<CoursesTraining />) },
           {
-            path: "training",
-            element: <CoursesTraining />,
+            path: "training/details/:id",
+            element: withSuspense(<TrainingDetails />),
           },
-          { path: "training/details/:id", element: <TrainingDetails /> },
+          { path: "workshops", element: withSuspense(<CoursesWorkshops />) },
           {
-            path: "workshops",
-            element: <CoursesWorkshops />,
+            path: "workshops/details/:id",
+            element: withSuspense(<WorkshopDetails />),
           },
-          { path: "workshops/details/:id", element: <WorkshopDetails /> },
         ],
       },
-      { path: "/blog", element: <Blog /> },
-      { path: "blog/details/:id", element: <BlogDetails /> },
-      { path: "/consulting", element: <Consulting /> },
-      { path: "/podcast", element: <Podcast /> },
-      { path: "/contact", element: <ContactUs /> },
-      { path: "/cart", element: <Cart /> },
-      { path: "/profile", element: <Profile /> },
-      { path: "/my-courses", element: <MyCourses /> },
+      { path: "/blog", element: withSuspense(<Blog />) },
+      { path: "blog/details/:id", element: withSuspense(<BlogDetails />) },
+      { path: "/consulting", element: withSuspense(<Consulting />) },
+      { path: "/podcast", element: withSuspense(<Podcast />) },
+      { path: "/contact", element: withSuspense(<ContactUs />) },
+      { path: "/cart", element: withSuspense(<Cart />) },
+      { path: "/profile", element: withSuspense(<Profile />) },
+      { path: "/my-courses", element: withSuspense(<MyCourses />) },
     ],
   },
 ]);

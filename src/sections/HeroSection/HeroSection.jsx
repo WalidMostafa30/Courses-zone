@@ -19,9 +19,10 @@ const HeroSection = () => {
       </h1>
 
       <img
+        loading="lazy"
         src={personImg}
         alt="Person"
-        className="absolute bottom-0 left-1/2 -translate-x-1/2 w-[500px] xl:w-[800px] z-10"
+        className="absolute bottom-0 left-1/2 -translate-x-1/2 w-[500px] xl:w-[40%] z-10"
       />
     </section>
   );

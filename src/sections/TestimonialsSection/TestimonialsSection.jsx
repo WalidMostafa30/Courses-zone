@@ -29,6 +29,7 @@ const TestimonialsSection = () => {
 
               <span className="w-24 h-24 rounded-full border-2 border-main-clr-2 overflow-hidden">
                 <img
+                  loading="lazy"
                   src={testimonial.image}
                   alt={testimonial.name}
                   className="w-full h-full object-cover"

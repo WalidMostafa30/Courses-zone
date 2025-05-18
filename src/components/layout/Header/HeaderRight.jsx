@@ -63,6 +63,7 @@ const HeaderRight = () => {
           >
             <div className="flex items-center gap-1 w-max">
               <img
+                loading="lazy"
                 src={currentLang.flag}
                 className="w-8"
                 alt={currentLang.label}
@@ -84,7 +85,12 @@ const HeaderRight = () => {
                 onClick={() => handleLanguageSelect(lang.code)}
                 className="flex items-center gap-1 p-2 cursor-pointer hover:bg-gray-100"
               >
-                <img src={lang.flag} className="w-8" alt={lang.label} />
+                <img
+                  loading="lazy"
+                  src={lang.flag}
+                  className="w-8"
+                  alt={lang.label}
+                />
                 <p>{lang.label}</p>
               </div>
             ))}

@@ -37,6 +37,7 @@ const Consulting = () => {
           <div className="flex flex-col">
             <span className="w-full h-96">
               <img
+                loading="lazy"
                 src={coursesImg}
                 alt="consulting1"
                 className="w-full h-full object-cover rounded-3xl shadow-md"
@@ -51,6 +52,7 @@ const Consulting = () => {
           <div className="flex flex-col-reverse">
             <span className="w-full h-96">
               <img
+                loading="lazy"
                 src={coursesImg}
                 alt="consulting1"
                 className="w-full h-full object-cover rounded-3xl shadow-md"
@@ -89,6 +91,7 @@ const Consulting = () => {
           <div className="flex flex-col">
             <span className="w-full h-96">
               <img
+                loading="lazy"
                 src={coursesImg}
                 alt="consulting1"
                 className="w-full h-full object-cover rounded-3xl shadow-md"
@@ -103,6 +106,7 @@ const Consulting = () => {
           <div className="flex flex-col-reverse">
             <span className="w-full h-96">
               <img
+                loading="lazy"
                 src={coursesImg}
                 alt="consulting1"
                 className="w-full h-full object-cover rounded-3xl shadow-md"
