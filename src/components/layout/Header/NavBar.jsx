@@ -3,7 +3,7 @@ import DropDown from "../../common/DropDown/DropDown";
 import { Link, NavLink } from "react-router-dom";
 import { IoMdArrowDropdown, IoMdArrowDropleft } from "react-icons/io";
 
-const NavBar = () => {
+const NavBar = ({ setMobileNav }) => {
   const [linkDropDown, setLinkDropDown] = useState(false);
 
   const handleOpenLinkDropDown = (e) => {
@@ -13,13 +13,17 @@ const NavBar = () => {
 
   return (
     <nav className="flex flex-col xl:flex-row items-center justify-center gap-4">
-      <NavLink to="/" className="navLink">
+      <NavLink to="/" className="navLink" onClick={() => setMobileNav(false)}>
         <p className="text-xl xl:text-base 2xl:text-xl font-semibold duration-200 flex items-center gap-2">
           الرئيسية
         </p>
       </NavLink>
 
-      <NavLink to="/about-trainer" className="navLink">
+      <NavLink
+        to="/about-trainer"
+        className="navLink"
+        onClick={() => setMobileNav(false)}
+      >
         <p className="text-xl xl:text-base 2xl:text-xl font-semibold duration-200 flex items-center gap-2">
           عن المدرب
         </p>
@@ -42,7 +46,7 @@ const NavBar = () => {
         <DropDown isOpen={linkDropDown} onClose={() => setLinkDropDown(false)}>
           <Link
             to="/courses/training"
-            onClick={() => setLinkDropDown(false)}
+            onClick={(() => setLinkDropDown(false), () => setMobileNav(false))}
             className="flex items-center text-black justify-between gap-2 text-xl p-2 not-last:border-b"
           >
             دورات تدريبية
@@ -50,7 +54,7 @@ const NavBar = () => {
           </Link>
           <Link
             to="/courses/workshops"
-            onClick={() => setLinkDropDown(false)}
+            onClick={(() => setLinkDropDown(false), () => setMobileNav(false))}
             className="flex items-center text-black justify-between gap-2 text-xl p-2 not-last:border-b"
           >
             فعاليات وورش العمل
@@ -59,25 +63,41 @@ const NavBar = () => {
         </DropDown>
       </div>
 
-      <NavLink to="/blog" className="navLink">
+      <NavLink
+        to="/blog"
+        className="navLink"
+        onClick={() => setMobileNav(false)}
+      >
         <p className="text-xl xl:text-base 2xl:text-xl font-semibold duration-200 flex items-center gap-2">
           المدونة
         </p>
       </NavLink>
 
-      <NavLink to="/consulting" className="navLink">
+      <NavLink
+        to="/consulting"
+        className="navLink"
+        onClick={() => setMobileNav(false)}
+      >
         <p className="text-xl xl:text-base 2xl:text-xl font-semibold duration-200 flex items-center gap-2">
           الاستشارات
         </p>
       </NavLink>
 
-      <NavLink to="/podcast" className="navLink">
+      <NavLink
+        to="/podcast"
+        className="navLink"
+        onClick={() => setMobileNav(false)}
+      >
         <p className="text-xl xl:text-base 2xl:text-xl font-semibold duration-200 flex items-center gap-2">
           بودكاست
         </p>
       </NavLink>
 
-      <NavLink to="/contact" className="navLink">
+      <NavLink
+        to="/contact"
+        className="navLink"
+        onClick={() => setMobileNav(false)}
+      >
         <p className="text-xl xl:text-base 2xl:text-xl font-semibold duration-200 flex items-center gap-2">
           تواصل معنا
         </p>

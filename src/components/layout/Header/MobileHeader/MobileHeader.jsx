@@ -20,7 +20,7 @@ const MobileHeader = ({ mobileNav, setMobileNav }) => {
         <HeaderRight />
       </div>
 
-      <NavBar />
+      <NavBar setMobileNav={setMobileNav} />
     </div>
   );
 };
