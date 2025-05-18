@@ -27,8 +27,8 @@ const Cart = lazy(() => import("../pages/Cart/Cart"));
 const Profile = lazy(() => import("../pages/Profile/Profile"));
 const MyCourses = lazy(() => import("../pages/MyCourses/MyCourses"));
 
-const withSuspense = (component) => (
-  <Suspense fallback={<Loading />}>{component}</Suspense>
+const withSuspense = (Component) => (
+  <Suspense fallback={<Loading />}>{Component}</Suspense>
 );
 
 // Routes
