@@ -2,6 +2,7 @@ import { FaStar, FaUser } from "react-icons/fa";
 import { LuArrowRight } from "react-icons/lu";
 import { MdOutlineDateRange, MdTimer } from "react-icons/md";
 import { Link } from "react-router-dom";
+import MyButton from "../MyButton/MyButton";
 
 const MainCard = ({
   image,
@@ -15,15 +16,6 @@ const MainCard = ({
   time,
   user,
 }) => {
-  const ratingBadge = rating && (
-    <span className="absolute left-2 top-2 flex items-center gap-1 bg-main-clr px-2 py-1 text-xl text-white">
-      {rating}
-      <span className="text-main-clr-2">
-        <FaStar />
-      </span>
-    </span>
-  );
-
   const dateSection = date && (
     <div className="flex items-center justify-between">
       <p className="flex items-center gap-2 font-semibold">
@@ -57,15 +49,22 @@ const MainCard = ({
     : price && <p className="text-lg font-semibold text-main-clr-1">{price}</p>;
 
   return (
-    <div className="flex flex-col gap-4 rounded-2xl bg-white p-4 shadow-lg duration-200 hover:shadow-xl">
-      <div className="relative h-40 w-full overflow-hidden rounded-2xl">
+    <div className="space-y-4 rounded-2xl bg-white p-4 shadow-lg duration-200 hover:shadow-xl">
+      <div className="relative h-52 w-full overflow-hidden rounded-2xl">
         <img
           loading="lazy"
           src={image}
           alt={title}
           className="h-full w-full object-cover"
         />
-        {ratingBadge}
+        {rating && (
+          <div className="absolute inset-0 bg-main-clr-1/30 text-white text-xl p-2">
+            <p className="flex items-center justify-end gap-1">
+              {rating}
+              <FaStar className="text-main-clr-2" />
+            </p>
+          </div>
+        )}
       </div>
 
       {dateSection}
@@ -77,11 +76,8 @@ const MainCard = ({
       )}
 
       <div className="flex items-center justify-between">
-        <Link to={link} className="myBtn">
-          <span>
-            <LuArrowRight />
-          </span>
-          {linkTitle}
+        <Link to={link}>
+          <MyButton title={linkTitle} icon={<LuArrowRight />} />
         </Link>
 
         {bottomRightSection}

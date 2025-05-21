@@ -38,9 +38,9 @@ const router = createBrowserRouter([
     element: <App />,
     children: [
       { index: true, element: withSuspense(<Home />) },
-      { path: "/about-trainer", element: withSuspense(<AboutTrainer />) },
+      { path: "about-trainer", element: withSuspense(<AboutTrainer />) },
       {
-        path: "/courses",
+        path: "courses",
         children: [
           { path: "training", element: withSuspense(<CoursesTraining />) },
           {
@@ -54,14 +54,14 @@ const router = createBrowserRouter([
           },
         ],
       },
-      { path: "/blog", element: withSuspense(<Blog />) },
+      { path: "blog", element: withSuspense(<Blog />) },
       { path: "blog/details/:id", element: withSuspense(<BlogDetails />) },
-      { path: "/consulting", element: withSuspense(<Consulting />) },
-      { path: "/podcast", element: withSuspense(<Podcast />) },
-      { path: "/contact", element: withSuspense(<ContactUs />) },
-      { path: "/cart", element: withSuspense(<Cart />) },
-      { path: "/profile", element: withSuspense(<Profile />) },
-      { path: "/my-courses", element: withSuspense(<MyCourses />) },
+      { path: "consulting", element: withSuspense(<Consulting />) },
+      { path: "podcast", element: withSuspense(<Podcast />) },
+      { path: "contact", element: withSuspense(<ContactUs />) },
+      { path: "cart", element: withSuspense(<Cart />) },
+      { path: "profile", element: withSuspense(<Profile />) },
+      { path: "my-courses", element: withSuspense(<MyCourses />) },
     ],
   },
 ]);

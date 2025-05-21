@@ -26,7 +26,7 @@ const WorkshopDetails = () => {
             />
           </div>
 
-          <div className="flex-1 flex flex-col gap-4">
+          <div className="flex-1 space-y-4">
             <h2 className="text-3xl font-bold">
               ورشه عمل تصميم موقع الكتروني لبيع وايجار الاجهزه الالكترونيه
             </h2>
@@ -60,7 +60,9 @@ const WorkshopDetails = () => {
               </p>
             </div>
 
-            <FormBtn title={"اضافه الى السله"} />
+            <div className="lg:w-1/2 block mx-auto">
+              <FormBtn title={"اضافه الى السله"} />
+            </div>
           </div>
         </div>
       </div>

@@ -1,5 +1,5 @@
 import { FaPlus } from "react-icons/fa";
-import GlobalTitle from "../../components/layout/GlobalTitle/GlobalTitle";
+import GlobalTitle from "../../components/common/GlobalTitle/GlobalTitle";
 import { timelineData } from "../../data/data";
 
 const TimelineSection = () => {
@@ -10,9 +10,9 @@ const TimelineSection = () => {
         description="خبراتى ومهؤلاتى تمثل مزيجا متكاملا من المعرفه العمليه والمهارات التخصيصيه."
       />
 
-      <div className="relative px-4 max-w-6xl mx-auto flex flex-col gap-6">
+      <div className="relative myContainer flex flex-col gap-6">
         {/* line */}
-        <span className="absolute left-6 lg:left-1/2 transform lg:-translate-x-1/2 h-[calc(100%)] top-0 w-0 border border-dashed border-main-clr-2"></span>
+        <span className="absolute left-6 lg:left-1/2 transform lg:-translate-x-1/2 h-full w-0 border border-dashed border-main-clr-2"></span>
 
         {timelineData.map((item, index) => (
           <div
@@ -22,7 +22,7 @@ const TimelineSection = () => {
             }`}
           >
             {/* dot */}
-            <span className="absolute left-[-0.5rem] lg:left-1/2 transform lg:-translate-x-1/2 w-8 h-8 bg-main-clr-2 rounded-full z-10 flex items-center justify-center text-xl font-bold text-white">
+            <span className="absolute -left-2 lg:left-1/2 transform lg:-translate-x-1/2 w-8 h-8 bg-main-clr-2 rounded-full z-10 flex items-center justify-center text-xl font-bold text-white">
               <FaPlus />
             </span>
 

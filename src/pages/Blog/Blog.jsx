@@ -1,14 +1,14 @@
 import { IoMdSearch } from "react-icons/io";
 import MiniForm from "../../components/form/MiniForm";
 import Breadcrumbs from "../../components/layout/Breadcrumbs/Breadcrumbs";
-import GlobalTitle from "../../components/layout/GlobalTitle/GlobalTitle";
+import GlobalTitle from "../../components/common/GlobalTitle/GlobalTitle";
 import Pagination from "../../components/common/Pagination/Pagination";
 import { useState } from "react";
 import BlogList from "../../components/lists/BlogList/BlogList";
 import { blogPosts } from "../../data/data";
 
 const Blog = () => {
-  const [currentPage, setCurrentPage] = useState(2);
+  const [currentPage, setCurrentPage] = useState(1);
   const totalPages = 15;
 
   return (

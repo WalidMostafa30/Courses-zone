@@ -1,17 +1,21 @@
 import { FaFacebook, FaLinkedin } from "react-icons/fa";
 import NavBar from "../Header/NavBar";
+import SmallNavBar from "../Header/SmallNavBar";
 
 const Footer = () => {
   return (
     <footer className="bg-main-clr-1 py-8">
       <div className="myContainer flex flex-col items-center justify-center gap-5">
         <div className="text-left">
-          <p className="text-2xl font-bold text-white">Courses</p>
-          <p className="text-2xl font-bold text-main-clr-2">Zone</p>
+          <p className="text-4xl font-bold text-white">Courses</p>
+          <p className="text-4xl font-bold text-main-clr-2">Zone</p>
         </div>
 
-        <div className="text-white">
+        <div className="hidden lg:block text-white">
           <NavBar />
+        </div>
+        <div className="lg:hidden me-auto text-white">
+          <SmallNavBar />
         </div>
 
         <ul className="flex items-center gap-4">

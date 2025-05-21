@@ -2,6 +2,7 @@ import { FaFacebook, FaLinkedin, FaWhatsapp } from "react-icons/fa";
 import Breadcrumbs from "../../components/layout/Breadcrumbs/Breadcrumbs";
 import bgImg from "../../assets/images/courses-img.jpg";
 import FormInput from "../../components/form/FormInput";
+import FormBtn from "../../components/form/FormBtn";
 
 const ContactUs = () => {
   const handleSubmit = async (e) => {
@@ -104,9 +105,12 @@ const ContactUs = () => {
               </div>
             </div>
 
-            <button className="bg-main-clr-1 text-white text-2xl p-4 rounded-full w-full lg:w-1/2 block mx-auto mt-6">
-              ارسال
-            </button>
+            <div className="lg:w-1/2 block mx-auto mt-6">
+              <FormBtn
+                title={"ارسال"}
+                className="lg:w-1/2 block mx-auto mt-6"
+              />
+            </div>
           </form>
         </div>
       </div>

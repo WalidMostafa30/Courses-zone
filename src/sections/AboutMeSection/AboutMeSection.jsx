@@ -1,5 +1,6 @@
 import { MdDone } from "react-icons/md";
 import personImg from "../../assets/images/person.png";
+import squaresImg from "../../assets/images/squares.jpg";
 
 const AboutMeSection = () => {
   return (
@@ -40,8 +41,19 @@ const AboutMeSection = () => {
           </ul>
         </div>
 
-        <div className="hidden xl:flex h-full items-end w-1/2">
-          <img loading="lazy" src={personImg} alt="person" className="w-full" />
+        <div className="hidden xl:flex h-full items-end w-1/2 relative">
+          <img
+            loading="lazy"
+            src={squaresImg}
+            alt="squares"
+            className="absolute top-22 left-22 w-96 h-96 opacity-10"
+          />
+          <img
+            loading="lazy"
+            src={personImg}
+            alt="person"
+            className="w-[700px] relative"
+          ></img>
         </div>
       </div>
     </article>

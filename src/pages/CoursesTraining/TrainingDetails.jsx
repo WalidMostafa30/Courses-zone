@@ -57,7 +57,9 @@ const TrainingDetails = () => {
               </p>
             </div>
 
-            <FormBtn title={"اشترك الان"} />
+            <div className="lg:w-1/2 block mx-auto">
+              <FormBtn title={"اشترك الان"} />
+            </div>
           </div>
         </div>
 

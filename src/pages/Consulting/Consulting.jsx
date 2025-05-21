@@ -44,9 +44,7 @@ const Consulting = () => {
               />
             </span>
 
-            <span className="text-9xl text-main-clr-1">
-              <TbGridDots />
-            </span>
+            <TbGridDots className="text-9xl text-main-clr-1" />
           </div>
 
           <div className="flex flex-col-reverse">
@@ -59,9 +57,7 @@ const Consulting = () => {
               />
             </span>
 
-            <span className="text-9xl text-main-clr-2 mr-auto">
-              <TbGridDots />
-            </span>
+            <TbGridDots className="text-9xl text-main-clr-2 mr-auto" />
           </div>
         </div>
       </article>
@@ -98,9 +94,7 @@ const Consulting = () => {
               />
             </span>
 
-            <span className="text-9xl text-main-clr-1">
-              <TbGridDots />
-            </span>
+            <TbGridDots className="text-9xl text-main-clr-1" />
           </div>
 
           <div className="flex flex-col-reverse">
@@ -113,9 +107,7 @@ const Consulting = () => {
               />
             </span>
 
-            <span className="text-9xl text-main-clr-2 mr-auto">
-              <TbGridDots />
-            </span>
+            <TbGridDots className="text-9xl text-main-clr-2 mr-auto" />
           </div>
         </div>
       </article>

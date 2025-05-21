@@ -5,25 +5,27 @@ import "swiper/css/navigation";
 import "swiper/css/pagination";
 import "./TestimonialsSection.css";
 import { testimonials } from "../../data/data";
+import GlobalTitle from "../../components/common/GlobalTitle/GlobalTitle";
 
 const TestimonialsSection = () => {
   return (
     <section className="text-center SectionPadding px-4">
-      <h2 className="text-2xl font-bold mb-4">شهادات عملائنا</h2>
+      <GlobalTitle title="شهادات عملائنا" />
+
       <Swiper
         modules={[Navigation, Pagination]}
-        navigation
         pagination={{ clickable: true }}
-        className="max-w-5xl py-10 mx-auto swiper"
+        navigation
+        className="swiper"
       >
         {testimonials.map((testimonial, index) => (
-          <SwiperSlide key={index} className="mb-10">
+          <SwiperSlide key={index} className="mb-10 p-4">
             <div className="flex flex-col items-center gap-4">
               <div className="text-main-clr-2 text-2xl">
                 {"★".repeat(testimonial.rating)}
               </div>
 
-              <p className="text-gray-800 text-xl font-semibold max-w-md">
+              <p className="text-gray-800 text-xl font-semibold max-w-lg">
                 {testimonial.review}
               </p>
 

@@ -30,12 +30,16 @@ const FormInput = ({
   }
 
   return (
-    <div className="relative">
+    <div>
       <label className="block mb-1 text-xl font-bold">{label}</label>
       <div
-        className={`flex items-center gap-1 w-full rounded-full border-2 border-gray-300 px-4 ${
-          disabled ? "bg-gray-200" : ""
-        }`}
+        className={`flex items-center gap-1 w-full rounded-full border-2 px-4
+      ${
+        disabled
+          ? "bg-gray-200 border-gray-300"
+          : "border-gray-300 focus-within:border-main-clr-1"
+      }
+    `}
       >
         {inputIcon && (
           <span className="text-2xl text-main-clr-2">{inputIcon}</span>
@@ -48,7 +52,7 @@ const FormInput = ({
           disabled={disabled}
           value={value}
           onChange={onChange}
-          className={`flex-1 outline-0 py-4 text-xl ${
+          className={`flex-1 outline-0 py-4 text-xl bg-transparent ${
             disabled ? "cursor-not-allowed" : ""
           }`}
         />

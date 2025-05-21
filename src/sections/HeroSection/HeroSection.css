@@ -1,0 +1,15 @@
+/* hero section animation */
+.animate-fill-text {
+  animation: fillText 4s infinite;
+  -webkit-text-stroke: 0.8px var(--main-clr-2);
+}
+
+@keyframes fillText {
+  0%,
+  100% {
+    color: transparent;
+  }
+  50% {
+    color: var(--main-clr-1);
+  }
+}

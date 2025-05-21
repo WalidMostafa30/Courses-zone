@@ -1,15 +1,15 @@
 import { IoMdSearch } from "react-icons/io";
 import MiniForm from "../../components/form/MiniForm";
 import Breadcrumbs from "../../components/layout/Breadcrumbs/Breadcrumbs";
-import GlobalTitle from "../../components/layout/GlobalTitle/GlobalTitle";
+import GlobalTitle from "../../components/common/GlobalTitle/GlobalTitle";
 import Pagination from "../../components/common/Pagination/Pagination";
 import { useState } from "react";
 import WorkshopsList from "../../components/lists/WorkshopsList/WorkshopsList";
 import { workshops } from "../../data/data";
 
 const CoursesWorkshops = () => {
-  const [currentPage, setCurrentPage] = useState(2);
-  const totalPages = 5;
+  const [currentPage, setCurrentPage] = useState(1);
+  const totalPages = 15;
 
   return (
     <section>

@@ -8,10 +8,10 @@ const ModalContainer = ({ onClose, children }) => {
     >
       <div
         onClick={(e) => e.stopPropagation()}
-        className="relative bg-white rounded-xl w-full max-w-2xl py-10 px-4"
+        className="relative bg-white rounded-xl w-full max-w-2xl p-4 lg:py-10"
       >
         <button
-          className="text-red-700 text-3xl absolute top-2 right-2 cursor-pointer"
+          className="text-red-700 text-4xl absolute top-2 right-2 cursor-pointer"
           onClick={() => onClose()}
         >
           <IoIosCloseCircle />

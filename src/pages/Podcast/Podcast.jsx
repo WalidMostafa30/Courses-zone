@@ -1,4 +1,4 @@
-import GlobalTitle from "../../components/layout/GlobalTitle/GlobalTitle";
+import GlobalTitle from "../../components/common/GlobalTitle/GlobalTitle";
 import Pagination from "../../components/common/Pagination/Pagination";
 import Breadcrumbs from "../../components/layout/Breadcrumbs/Breadcrumbs";
 import { useState } from "react";
